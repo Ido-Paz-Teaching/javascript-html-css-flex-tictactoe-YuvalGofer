@@ -14,7 +14,7 @@
 //recieve a string array parameter and return true
 //if the game is a draw or false if not.
 function hasDraw(selectionArray) {
-   return false;
+   return true;
 }
 //recieve a string array parameter and return true 
 //if someone won the game or false if not.
