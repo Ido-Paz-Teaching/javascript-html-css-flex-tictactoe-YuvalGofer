@@ -43,11 +43,19 @@ function startGame() {
     document.querySelector('header button').removeEventListener('click', startGame);
     document.querySelector('header button').addEventListener('click', startGame, false);
 
+<<<<<<< HEAD
     for (let i = 0; i < cellTags.length; i++) {
        cellTags[i].removeEventListener('click', selectSquare);
        cellTags[i].addEventListener('click', selectSquare, false);
        cellTags[i].innerText = ' ';
        selectionArray[i] = ' ';
+=======
+    for(i = 0; i< cellTags.length; i++){
+    cellTags[i].removeEventListener('click', selectCell);
+    cellTags[i].addEventListener('click', selectCell, false);
+    cellTags[i].innerText = ' ';
+    selectionArray[i] = ' ';
+>>>>>>> c340215070ecd6b271076c3cb331bd11c70d3e64
     }
 }
 
