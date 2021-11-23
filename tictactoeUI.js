@@ -1,5 +1,3 @@
-const { hasWon } = require("./tictactoe");
-
 /*
 enter code to handle:
 1. User cell selection click
@@ -50,7 +48,7 @@ function startGame(){
     document.querySelector('header button').removeEventListener('click', startGame);
     document.querySelector('header button').addEventListener('click', startGame, false);
 
-    for(i = 0, i < cellTags.length, i++){
+    for(i = 0; i< cellTags.length; i++){
     cellTags[i].removeEventListener('click', selectCell);
     cellTags[i].addEventListener('click', selectCell, false);
     cellTags[i].innerText = ' ';
