@@ -27,30 +27,24 @@ function switchPlayers(){
         return player[1];
     }
 }
-function isDraw() {
-    if(turnsNumber == maximumTurns) {
-        return true;
-    }
-}
-function getSquareNum(squareID)
-{
-    parseInt(squareID.replace(squareIdPre, ''));
-}
+const isDraw = () => turnsNumber == maximumTurns; 
+const getSquareNum = (squareID) => parseInt(squareID.replace(squareIdPre, ''));
+
 //main function
 function startGame() {
     let board = document.getElementById('board');
     let squareTags = board.getElementsByTagName(squareTag);
     //
     isGameOver = false;
-    playerTurn = 0;
+    turnsNumber = 0;
 
     setGameStatus();
     document.querySelector('header button').removeEventListener('click', startGame);
     document.querySelector('header button').addEventListener('click', startGame, false);
 
     for(let i = 0; i< squareTags.length; i++){
-    squareTags[i].removeEventListener('click', selectCell);
-    squareTags[i].addEventListener('click', selectCell, false);
+    squareTags[i].removeEventListener('click', selectSquare);
+    squareTags[i].addEventListener('click', selectSquare, false);
     squareTags[i].innerText = ' ';
     }
 }
@@ -69,7 +63,7 @@ function selectSquare(event) {
 
 //
 function setGameStatus() {
-    if(isGameOver)
+    if(isGameOver) 
     gameStatusMessage = playerTurn + 'Won the game!';
     else if(turnsNumber == 0)
     gameStatusMessage = 'Waiting for you to start the game..';
