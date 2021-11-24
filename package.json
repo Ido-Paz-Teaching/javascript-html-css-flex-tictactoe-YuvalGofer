@@ -16,7 +16,6 @@
     "url": "https://github.com/Ido-Paz-Teaching/javascript-html-css-flex-tictactoe-ido-paz/issues"
   },
   "homepage": "https://github.com/Ido-Paz-Teaching/javascript-html-css-flex-tictactoe-ido-paz#readme",
-  "dependencies": {},
   "devDependencies": {
     "jest": "^27.3.1"
   }
