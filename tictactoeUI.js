@@ -6,7 +6,7 @@ enter code to handle:
 */
 const selectionArray = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ];
 const player = ['X', 'O'];
-const cellTag = 'button';
+const squareTag = 'button';
 const maximumTurns = 10;
 const squareIdPre = 'b';
 //
@@ -15,20 +15,20 @@ let playerTurn = player[0];
 let turnsNumber = 0;
 let isGameOver = false;
 //
-window.addEventListener('load', function(){
+window.addEventListener('load', function() {
     startGame();
 }, false);
 //pre-function
-function switchPlayers(){
-    if(playerTurn == player[0]){
+function switchPlayers() {
+    if(playerTurn == player[0]) {
         return player[0];
     }
     else{
         return player[1];
     }
 }
-function isDraw(){
-    if(turnsNumber == maximumTurns){
+function isDraw() {
+    if(turnsNumber == maximumTurns) {
         return 'Draw!';
     }
 }
@@ -37,9 +37,9 @@ function getSquareNum(squareID)
     parseInt(squareID.replace(squareIdPre, ''));
 }
 //main function
-function startGame(){
+function startGame() {
     let board = document.getElementById('board');
-    let cellTags = board.getElementsByTagName(cellTag);
+    let squareTags = board.getElementsByTagName(squareTag);
     //
     isGameOver = false;
     playerTurn = 0;
@@ -48,10 +48,10 @@ function startGame(){
     document.querySelector('header button').removeEventListener('click', startGame);
     document.querySelector('header button').addEventListener('click', startGame, false);
 
-    for(i = 0; i< cellTags.length; i++){
-    cellTags[i].removeEventListener('click', selectCell);
-    cellTags[i].addEventListener('click', selectCell, false);
-    cellTags[i].innerText = ' ';
+    for(let i = 0; i< squareTags.length; i++){
+    squareTags[i].removeEventListener('click', selectCell);
+    squareTags[i].addEventListener('click', selectCell, false);
+    squareTags[i].innerText = ' ';
     selectionArray[i] = ' ';
     }
 }
