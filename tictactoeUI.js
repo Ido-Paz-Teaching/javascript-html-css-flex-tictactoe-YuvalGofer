@@ -4,7 +4,11 @@ enter code to handle:
 2. game status update messages
 3. Start button click
 */
+<<<<<<< HEAD
 /*const player = ['X', 'O'];
+=======
+const player = ['X', 'O'];
+>>>>>>> 340f251f8347ec1c031614e7cda91f1afafdfbd9
 const squareTag = 'button';
 const maximumTurns = 10;
 const squareIdPre = 'b';
@@ -62,7 +66,11 @@ function selectSquare(event) {
      /*setGameStatus();*/
 
 //
+<<<<<<< HEAD
 /*function setGameStatus() {
+=======
+function setGameStatus() {
+>>>>>>> 340f251f8347ec1c031614e7cda91f1afafdfbd9
     if(isGameOver) 
     gameStatusMessage = playerTurn + 'Won the game!';
     else if(turnsNumber == 0)
