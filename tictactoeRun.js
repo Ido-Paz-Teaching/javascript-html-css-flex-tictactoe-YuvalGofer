@@ -3,7 +3,9 @@ var statusDisplay = document.getElementById('gameStatusTag');
 let gameActive = true;
 let currentPlayer = "X";
 let gameSelectionArray = ["", "", "", "", "", "", "", "", "",];
+let drawState = false;
 //Game condition
+var array = gameSelectionArray;
 var winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => 'Game ended in a draw!';
 var currentPlayerTurn = () => `It ${currentPlayer} turn`;
@@ -33,9 +35,16 @@ function resultValidation() {
                 statusDisplay.innerHTML = winningMessage();
                 return false;
         }
+        drawState = !gameSelectionArray.includes("");
+        if(drawState){
+        statusDisplay.innerHTML = drawMessage();
+        gameActive = false;
+        return false;
+        }
     }
 
     return true;
+}
 
     // for(let i = 0; i <= 9; i++){
     //     const winCondition = winningCondition[i];
@@ -61,7 +70,7 @@ function resultValidation() {
     //         gameActive = false;
     //         return;
     //     }
-}
+
 function squareClick(clickedSquareEvent) {
 
     var clickedSquare = clickedSquareEvent.target;
@@ -78,11 +87,10 @@ function squareClick(clickedSquareEvent) {
         playerChange();
 }
 function restartGame() {
+    location.reload();
     gameActive = true;
     currentPlayer = "X";
-    gameSelectionArray = ["", "", "", "", "", "", "", "", "",];
     statusDisplay.innerHTML = currentPlayerTurn();
-    document.querySelectorAll('#board > button').forEach((b) => b.addEventListener('click', squareClick));
 }
 //Button query 
 document.querySelectorAll('#board > button').forEach((b) => b.addEventListener('click', squareClick));
